@@ -1,24 +1,36 @@
-# README
+# Full-Stack Coding Challenge
+### Ruby on Rails - Ruby
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Project Requirements:
 
 * Ruby version
+2.7.2
+* Node Version
+14.15.4
 
-* System dependencies
+#### The Challenge:
 
-* Configuration
+You are hired by the CheeZies pizza store to create their order placement application and have the responsibility to make it handle the business’ growing number of customers and orders. Thus, CheeZies wants their app to:
 
-* Database creation
+* Display the menu
+* Receive orders
+* Add products to cart
+* Keep track of all operations
 
-* Database initialization
+If possible, document any assumptions and design decisions you make.
 
-* How to run the test suite
+#### Backend 
+We will provide you with a project in Ruby on Rails 6. Some possible models are: Products or Items, which have a name and price—e.g. Margherita $5, Pepperoni $6—order, containing items, and order item, consisting of pizza and quantity.
 
-* Services (job queues, cache servers, search engines, etc.)
+Rspec is already added into the project so you can add specs to the basic backend functionality.
 
-* Deployment instructions
+#### Frontend
+For the front end you can use ERB, HAML or even React. 
 
-* ...
+We have already installed Bootstrap and feel free to use any other library that will help you make a quick UI. 
+
+Testing the frontend using capybara is not mandatory.
+
+
+
