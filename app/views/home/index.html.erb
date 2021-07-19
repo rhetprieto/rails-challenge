@@ -18,8 +18,8 @@
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">CheeZies Pizza Store</h1>
         <p>
-          <a href="#" class="btn btn-primary my-2">Menu</a>
-          <a href="#" class="btn btn-secondary my-2">Orders</a>
+          <%= link_to 'Create Order', new_order_path, class: 'btn btn-primary my-2' %>
+          <%= link_to 'List Orders', orders_path, class: 'btn btn-secondary my-2' %>
         </p>
       </div>
     </div>

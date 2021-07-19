@@ -14,8 +14,8 @@ Project Requirements:
 You are hired by the CheeZies pizza store to create their order placement application and have the responsibility to make it handle the business’ growing number of customers and orders. Thus, CheeZies wants their app to:
 
 * Display the menu
-* Receive orders
-* Add products to cart
+* Create Orders
+* List Orders
 * Keep track of all operations
 
 If possible, document any assumptions and design decisions you make.
