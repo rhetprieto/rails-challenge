@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
     def index
-        render component: 'Home'
+        render component: 'Home', prerender: false
     end
 end
