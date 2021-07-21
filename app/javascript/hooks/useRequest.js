@@ -9,7 +9,7 @@ const useRequest = ({
     const [data, setData] = useState(null);
 
     const handleSuccess = (res) => {
-        setData(JSON.parse(res.data));
+        setData(res.data);
         setLoading(false);
     };
 

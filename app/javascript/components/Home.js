@@ -1,6 +1,5 @@
 import React, {useState} from "react"
 import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
-import PropTypes from "prop-types"
 import OrderContext from '../contexts/OrderContext';
 import LandingPage from './LadingPage';
 import NewOrder from '../containers/NewOrder'
@@ -9,12 +8,13 @@ import OrderList from './OrderList'
 const Home = (props) => {
   const [currentOrder, setCurrentOrder] = useState([])
   const addToOrder = (product) => {
+    // Assume you can only add one pizza of each type to the current order
     setCurrentOrder(currentOrder.concat(product))
   }
   const removeFromOrder = (product) => {
-    const prodIdx = currentOrder.find((p) => {return p.id === product.id})
-    if(prodIdx>0) {
-      setCurrentOrder(currentOrder.splice(prodIdx,1))
+    const prodFround = currentOrder.find((p) => {return p.id === product.id})
+    if(prodFround) {
+      setCurrentOrder(currentOrder.splice(currentOrder.indexOf(product),1))
     }
   }
   return (

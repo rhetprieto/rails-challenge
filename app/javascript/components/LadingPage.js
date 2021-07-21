@@ -9,8 +9,8 @@ const ContinueOrder = () => {
         <h3 className="didplay-4">
             Continue your order of
         </h3>
-        <ul className="lead">
-            {currentOrder.map((product) => <li>{product.name}: {product.price_cents}</li>)}
+        <ul className="list-group">
+            {currentOrder.map((product) => <li className="list-group-item" key={`cont-${product.id}`}>{product.name}: {product.price_cents}</li>)}
         </ul>
     </div>
     )

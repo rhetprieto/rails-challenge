@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
-import useRequest from '../hooks/useRequest'
+import useRequest from '../hooks/useRequest';
+import Product from '../components/Product';
 
 const NewOrder = () => {
     const [data, loading, error] = useRequest({url: '/products/list'})
@@ -16,7 +17,7 @@ const NewOrder = () => {
     return (
         <div>
             {data.map((product) => {
-                return (<div>{product.name}: {product.price_cents}</div>)
+                return <Product key={product.id} product={product} />
             })}
         </div>
     )
