@@ -4,10 +4,9 @@ import OrderContext from '../contexts/OrderContext';
 
 const OrderButton = () => {
     const [currentOrder] = useContext(OrderContext);
-    const [data, loading, error, execute, called] = useRequest({url: '/orders/create',lazy:true, method:'POST'})
+    const [data, loading, error, execute, called] = useRequest({url: '/orders',lazy:true, method:'POST'})
 
     const handleMakeOrder = () => {
-        console.log('will create order');
         execute({params: {products: currentOrder}});
     }
 

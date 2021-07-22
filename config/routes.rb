@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get "home/index"
   root to: "home#index"
 
+  get '/orders/get_all', to: 'orders#get_all'
+
   resources :orders
   resources :products
 end
