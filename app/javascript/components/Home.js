@@ -2,8 +2,9 @@ import React, {useState} from "react"
 import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
 import OrderContext from '../contexts/OrderContext';
 import LandingPage from './LadingPage';
-import NewOrder from '../containers/NewOrder'
-import OrderList from './OrderList'
+import NewOrder from '../containers/NewOrder';
+import OrderList from './OrderList';
+import OrderButton from './OrderButton';
 
 const Home = (props) => {
   const [currentOrder, setCurrentOrder] = useState([])
@@ -17,19 +18,18 @@ const Home = (props) => {
       setCurrentOrder(currentOrder.splice(currentOrder.indexOf(product),1))
     }
   }
+
+  const totalPrice = () => {
+    return currentOrder.reduce((acc, p) => {return acc + p.price_cents},0);
+  }
   return (
     <OrderContext.Provider value={[currentOrder, addToOrder, removeFromOrder]}>
-      <div className="collapse" id="navbarToggleExternalContent">
-        <div className="bg-dark p-4">
-          <h5 className="text-white h4">Collapsed content</h5>
-          <span className="text-muted">Toggleable via the navbar brand.</span>
-        </div>
-      </div>
       <nav className="navbar navbar-dark bg-dark">
         <div className="container-fluid">
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          <p className="navbar-toggler">
+            ${totalPrice()}
+          </p>
+          <OrderButton />
         </div>
       </nav>
 
